@@ -16,6 +16,7 @@ int main(){
     SetConsoleOutputCP(CP_UTF8);
 
     cout<< Colores::NEGRITA <<"BIENVENIDO A POKEMON RPG: LA LIGA VALDERRA"<<endl; 
+    cout<<"  "<<endl; 
 
     MenuInicio();
 
@@ -29,7 +30,8 @@ int main(){
         break;
 
     case 2:
-        /* code */
+        Estadisticas();
+
         break;
 
     case 3:

@@ -2,5 +2,6 @@
 #define FUNCIONES_H
 
 void MenuInicio();
+void Estadisticas();
 
 #endif
