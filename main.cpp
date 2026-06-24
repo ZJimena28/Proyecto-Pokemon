@@ -1,8 +1,9 @@
 #include <iostream>
-#include <funcion.h>
+#include "funcion.h"
 #include <Windows.h>
 using namespace std;
 
+//Dar color a algunos cout
 namespace Colores{
 const std::string ROJO = "\033[0m";
 const std::string NEGRITA = "\033[1m";
