@@ -32,13 +32,97 @@ void Estadisticas(){
     cout<<"▸ Pistola de Agua "<< "\033[36m" << "(Agua) ──> 15" <<"\033[0m" <<endl;
 
     cout<<"▻ Geodude 65 HP"<< "\033[90m" << "(Roca)"<< "\033[0m" <<endl;
-    cout<<"▸ Lanzarrocas"<<"\033[90m"<< " (Roca) ──> 16" <<endl;
+    cout<<"▸ Lanzarrocas"<<"\033[90m"<< " (Roca) ──> 16"<< "\033[0m" <<endl;
     cout<<"▸ Azote (normal) ──> 10"<<endl;
 
-    cout<<"▻ Pidgey 55 HP"<<endl;
+    cout<<"▻ Pidgey 55 HP"<< "\033[33m"<< "(Volador)"<< "\033[0m"<<endl;
+    cout<<"▸ Ataque de arena (Normal) ──> 10"<<endl;
+    cout<<"▸ Tornado " <<  "\033[33m"<<"(Volador) ──> 15"<< "\033[0m"<<endl;
 
+    cout<<"▻ Caterpie 50 HP"<< "\033[38m"<< "(Bicho)"<< "\033[0m"<<endl;
+    cout<<"▸ Ataque de Sorpresa (Normal) ──> 10"<<endl;
+    cout<<"▸ Picadura " <<  "\033[38m"<<"(Bicho) ──> 12"<< "\033[0m"<<endl;
+
+    cout<<"▻ Eevee 60 HP"<<"(Normal)"<<endl;
+    cout<<"▸ Placaje (Normal) ──> 12"<<endl;
+    cout<<"▸ Mordisco (Normal) ──> 14"<<endl;
 }
 
+void OpcPokemon(){
+    cout<<"────────────────────────────────"<<endl;
+    cout<<"[    - Menú de Pokemons -      ]"<<endl;
+    cout<<"|    1. Charmander             |"<<endl;
+    cout<<"|    2. Squirtle               |"<<endl;
+    cout<<"|    3. Bulbasaur              |"<<endl;
+    cout<<"────────────────────────────────"<<endl;
+}
 
+void mostrarHP(int hpJ, int hpR){
+
+    cout<<"────────────────────────────────────────"<<endl;
+
+    cout<<"Tu HP [ ";
+
+    for(int i = 10; i>0; i--){
+        if(hpJ >= (11-i)*10){
+            cout<<"■";
+        }
+        else{
+            cout<<"□";
+        }
+    }
+    cout<<" ]  ||  HP Rival [ ";
+
+    cout<<"HP Rival [ "<< hpR <<" ] ";
+
+    for(int i = 10; i>0; i--){
+        if(hpR >= (11-i)*10){
+            cout<<"■";
+        }
+        else{
+            cout<<"□";
+        }
+    }
+    cout<<" ] "<<endl;
+
+    personajes();
+
+    cout<<"────────────────────────────────────────"<<endl;
+}
+
+void personajes(){
+
+    cout<<"\033[47;30;1m"<<"  ●/                         \\●"<<endl;
+    cout<<"\033[47;30;1m"<<" /||                          ||\\"<<endl;
+    cout<<"\033[47;30;1m"<<"  /\\                         /\\"<<endl;
+}
+
+void Partida(){
+
+    int Lideres = 0, hpJ=100, hpR= 80 + (Lideres*10);
+    int atk, dano=0;
+    bool jugador = true; //el jugador esta vivo 
+
+    while(Lideres < 5 && jugador){
+
+        cout<<"Presiona ENTER para avanzar al siguiente líder"<<endl;
+        cin.ignore();
+        cin.get(); //Esperamos el enter del jugador
+
+        //RestaurarHP
+        cout<<"Todos los pokemones han sido resturados al 100%"<<endl;
+
+        mostrarHP(hpJ,hpR);
+
+        //Empieza el jugador a atacar
+
+        cout<<"Tu turno de atacar!"<<endl;
+
+
+
+
+
+    }
+}
 
 

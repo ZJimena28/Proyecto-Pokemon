@@ -3,5 +3,6 @@
 
 void MenuInicio();
 void Estadisticas();
+void OpcPokemon();
 
 #endif

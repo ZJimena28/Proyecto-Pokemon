@@ -3,19 +3,16 @@
 #include <Windows.h>
 using namespace std;
 
-//Dar color a algunos cout
-namespace Colores{
-const std::string ROJO = "\033[0m";
-const std::string NEGRITA = "\033[1m";
-}
 
 //variables declaradas
-int opc;
+int opc, opPk;
+string entrenador, pkelegido=" ";
+
 
 int main(){
     SetConsoleOutputCP(CP_UTF8);
 
-    cout<< Colores::NEGRITA <<"BIENVENIDO A POKEMON RPG: LA LIGA VALDERRA"<<endl; 
+    cout<< "\033[1m" <<"BIENVENIDO A POKEMON RPG: LA LIGA VALDERRA"<<endl; 
     cout<<"  "<<endl; 
 
     MenuInicio();
@@ -26,7 +23,40 @@ int main(){
     switch (opc)
     {
     case 1:
-        /* code */
+        cout<<"Ingrese el nombre del entrenador: "<<endl;
+        cin>> entrenador;
+
+        cout<<"    "<<endl;
+        cout<<" ── ------------------------ ── "<<endl;
+        cout<<"     "<<endl;
+
+        OpcPokemon();
+        cout<<"    "<<endl;
+        cout<<"¿Qué Pokemon eliges?"<<endl;
+        cin>>opPk;
+
+        switch (opPk)
+        {
+        case 1:
+            pkelegido = " Escogiste a Charmander!";
+            break;
+
+        case 2:
+            pkelegido = " Escogiste a Squirtle!";
+            break;
+        
+        case 3:
+            pkelegido = " Escogiste a Bulbasaur!";
+            break;
+        
+        default:
+            cout<<"Opcion invalida!"<<endl;
+            break;
+        }
+
+        cout<<"Felicidades obtuviste tu primer Pokemon (Agregado al equipo)"<<endl;
+
+
         break;
 
     case 2:
