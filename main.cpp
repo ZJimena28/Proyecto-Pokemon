@@ -34,6 +34,7 @@ int main(){
         cout<<"    "<<endl;
         cout<<"¿Qué Pokemon eliges?"<<endl;
         cin>>opPk;
+        cout<<"    "<<endl;
 
         switch (opPk)
         {
@@ -56,6 +57,8 @@ int main(){
 
         cout<<"Felicidades obtuviste tu primer Pokemon (Agregado al equipo)"<<endl;
 
+        //Empieza el juego
+        Partida();
 
         break;
 
