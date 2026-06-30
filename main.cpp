@@ -68,7 +68,20 @@ int main(){
         break;
 
     case 3:
-        /* code */
+        cout << "===============================================================" << endl;
+    cout << "TIPO      DEBILIDADES                 EFICAZ CONTRA" << endl;
+    cout << "===============================================================" << endl;
+
+    cout << "Fuego     Agua, Roca                  Planta, Bicho" << endl;
+    cout << "Agua      Planta, Electrico           Fuego, Roca" << endl;
+    cout << "Planta    Fuego, Bicho                Agua, Roca" << endl;
+    cout << "Electrico Ninguna                     Agua" << endl;
+    cout << "Roca      Agua, Planta                Fuego, Bicho, Volador" << endl;
+    cout << "Volador   Electrico, Roca             Planta, Bicho" << endl;
+    cout << "Bicho     Fuego, Roca                 Planta" << endl;
+    cout << "Normal    Ninguna                     Ninguna" << endl;
+
+    cout << "===============================================================" << endl;
         break;
     
     case 4:
