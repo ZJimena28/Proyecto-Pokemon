@@ -3,9 +3,6 @@
 #include <windows.h>
 using namespace std;
 
-int opc, opPk, Lideres = 0, atk;
-string entrenador, pkelegido = " ";
-
 int main() {
     SetConsoleOutputCP(CP_UTF8); 
     
@@ -25,6 +22,8 @@ int main() {
                 string nom;
                 int equipo[6];
                 int tam = 0, hpJ = 0, lider = 0;
+                string entrenador;
+                int opPk = 0;
                 bool cargado = CargarPartida(nom, equipo, tam, hpJ, lider);
 
                 if (!cargado) {
@@ -43,29 +42,32 @@ int main() {
 
                     switch (opPk) {
                         case 1:
-                            pkelegido = " Escogiste a Charmander!";
+                            cout << " Escogiste a Charmander!" << endl;
                             break;
                         case 2:
-                            pkelegido = " Escogiste a Squirtle!";
+                            cout << " Escogiste a Squirtle!" << endl;
                             break;
                         case 3:
-                            pkelegido = " Escogiste a Bulbasaur!";
+                            cout << " Escogiste a Bulbasaur!" << endl;
                             break;
                         default:
                             cout << "Opcion invalida!" << endl;
                             break;
                     }
 
-                    cout << pkelegido << endl;
                     cout << "Felicidades obtuviste tu primer Pokemon (Agregado al equipo)" << endl;
 
-                    Partida();
+                    opc = Partida(entrenador, opPk);
                 } else {
                     entrenador = nom;
+                    // Recuperar el starter desde el equipo guardado
+                    if (equipo[0] == 0) opPk = 1;
+                    else if (equipo[0] == 3) opPk = 2;
+                    else opPk = 3;
                     cout << "\n Presiona ENTER para continuar..." << endl;
                     cin.ignore();
                     cin.get();
-                    Partida();
+                    opc = Partida(entrenador, opPk);
                 }
                 break;
             }
