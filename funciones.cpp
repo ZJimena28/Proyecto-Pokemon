@@ -294,7 +294,7 @@ bool CargarPartida(string &nombre, int equipo[], int &tam, int &vida, int &lider
 
 // ===================== PARTIDA (COMBATE + CICLO DE LIDERES) =====================
 
-void Partida() {
+int Partida(string entrenador, int opPk) {
     int hpJ, hpR;
     int Lideres = 0;
     int dano = 0;
@@ -304,6 +304,7 @@ void Partida() {
     int equipo[6];
     int tam = 0;
     int volver;
+    int atk;
     int multi;
 
     // Asignar starter segun la eleccion de main.cpp
@@ -468,11 +469,10 @@ void Partida() {
                 tam = 1;
                 hpJ = hpMaxPokemon[idxStarter];
                 equipo[0] = idxStarter;
-                opc = 0;
-                return;
+                return 0;
             } else {
                 cout << "\nGracias por jugar, hasta luego!!" << endl;
-                opc = 4;
+                return 4;
             }
         }
     }
@@ -508,10 +508,11 @@ void Partida() {
             tam = 1;
             equipo[0] = idxStarter;
             hpJ = hpMaxPokemon[idxStarter];
-            opc = 0;
+            return 0;
         } else {
             cout << "\nGracias por jugar, hasta luego!!" << endl;
-            opc = 4;
+            return 4;
         }
     }
+    return 0;
 }
