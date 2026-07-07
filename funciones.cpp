@@ -312,9 +312,8 @@ void Partida() {
     int idxStarter;
     int equipo[6];
     int tam = 0;
-    int volver;
-    int atk;
-    int multi;
+    int volver,multi;
+    int atk,opPK;
 
     // Asignar starter segun la eleccion de main.cpp
     if (opPk == 1) {
