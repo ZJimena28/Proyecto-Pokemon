@@ -1,11 +1,19 @@
 #include <iostream>
 #include "funcion.h"
-#include <windows.h>
+
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
 using namespace std;
 
 int main() {
-    SetConsoleOutputCP(CP_UTF8); 
+
+    #ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+    #endif
     
+    int opc;
     LeerAleatorios();
 
     cout << "\033[1m" << "BIENVENIDO A POKEMON RPG: LA LIGA VALDERRA" << endl;

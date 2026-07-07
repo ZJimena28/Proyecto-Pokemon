@@ -1,10 +1,13 @@
 #include <iostream>
-#include <windows.h>
 #include "funcion.h"
+
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
 using namespace std;
 
 // ===================== DATOS DE LOS 8 POKEMON =====================
-
 
 string nombresPokemon[8] = {
     "Charmander", "Pikachu", "Bulbasaur", "Squirtle",
@@ -93,8 +96,6 @@ int Aleatorio() {
 // ===================== MENU =====================
 
 void MenuInicio() {
-    SetConsoleOutputCP(CP_UTF8); 
-
     cout << "────────────────────────────────" << endl;
     cout << "|        MENU PRINCIPAL        |" << endl;
     cout << "| ── ---------------------- ── |" << endl;
@@ -155,7 +156,6 @@ void Estadisticas() {
 // ===================== OPCION POKEMON =====================
 
 void OpcPokemon() {
-    SetConsoleOutputCP(CP_UTF8); 
     cout << "────────────────────────────────" << endl;
     cout << "[    - Menu de Pokemons -      ]" << endl;
     cout << "|    1. Charmander             |" << endl;
@@ -167,7 +167,6 @@ void OpcPokemon() {
 // ===================== TIPOS =====================
 
 void Tipos() {
-    SetConsoleOutputCP(CP_UTF8); 
     cout << "===============================================================" << endl;
     cout << "TIPO      DEBILIDADES                 EFICAZ CONTRA" << endl;
     cout << "===============================================================" << endl;
@@ -189,7 +188,6 @@ void Tipos() {
 // ===================== BARRA DE HP (ESTILO DEL PROYECTO) =====================
 
 void mostrarHP(int hpJ, int hpR) {
-    SetConsoleOutputCP(CP_UTF8); 
     cout << "────────────────────────────────────────" << endl;
     cout << "Tu HP [ ";
     for (int i = 10; i > 0; i--) {
@@ -217,7 +215,6 @@ void mostrarHP(int hpJ, int hpR) {
 // ===================== PERSONAJES =====================
 
 void personajes() {
-    SetConsoleOutputCP(CP_UTF8); 
     cout << "\033[37;1m" << "  ●/                                 \\●" << endl;
     cout << "\033[37;1m" << " /||                                   ||\\" << endl;
     cout << "\033[37;1m" << "  /\\                                  /\\" << endl;
@@ -302,8 +299,7 @@ bool CargarPartida(string &nombre, int equipo[], int &tam, int &vida, int &lider
 
 // ===================== PARTIDA (COMBATE + CICLO DE LIDERES) =====================
 
-void Partida() {
-    SetConsoleOutputCP(CP_UTF8); 
+int Partida(string entrenador, int opPk) {
     int hpJ, hpR;
     int Lideres = 0;
     int dano = 0;
