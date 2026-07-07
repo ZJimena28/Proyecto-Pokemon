@@ -28,7 +28,8 @@ int main() {
 
                 if (!cargado) {
                     cout << "Ingrese el nombre del entrenador: " << endl;
-                    cin >> entrenador;
+                    cin.ignore();
+                    getline(cin, entrenador);
 
                     cout << "    " << endl;
                     cout << " ── ------------------------ ── " << endl;
