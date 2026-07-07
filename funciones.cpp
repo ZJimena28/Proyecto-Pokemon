@@ -118,7 +118,7 @@ void personajes()
 
     cout << "\033[37;1m" << "  ●/                                 \\●" << endl;
     cout << "\033[37;1m" << " /||                                   ||\\" << endl;
-    cout << "\033[37;1m" << "  /\\                                  /\\" << endl;
+    cout << "\033[37; 1m" << "  /\\                                  /\\" << endl;
 }
 
 void Partida()
