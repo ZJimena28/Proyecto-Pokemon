@@ -322,8 +322,9 @@ int Partida(string entrenador, int opPk) {
 
     cout << "    " << endl;
     cout << "────────────────────────────────────────" << endl;
-    cout << entrenador << " vs LIGA VALDERRA" << endl;
+    cout <<     entrenador << " vs LIGA VALDERRA" << endl;
     cout << "────────────────────────────────────────" << endl;
+    cout << "    " << endl;
 
     equipo[0] = idxStarter;
     tam = 1;
@@ -334,8 +335,8 @@ int Partida(string entrenador, int opPk) {
 
         if (!turno) {
             if (Lideres < 5) {
-                cout << "Presiona ENTER para avanzar al siguiente lider: "
-                     << nombresPokemon[lideresPokemon[Lideres]] << endl;
+                cout << "Presiona ENTER para avanzar al siguiente lider: " << nombresPokemon[lideresPokemon[Lideres]] << endl;
+                
             } else {
                 cout << "Presiona ENTER para continuar" << endl;
             }
@@ -451,12 +452,11 @@ int Partida(string entrenador, int opPk) {
 
         // Si el jugador perdio
         if (!jugador) {
-            cout << "\n========== HAS SIDO DERROTADO ==========" << endl;
+            cout<<"\033[1m" << "\n========== HAS SIDO DERROTADO =========="<< "\033[0m" << endl;
             cout << "Fin del camino, " << entrenador << "..." << endl;
 
             cout << "\nQuieres volver a jugar?" << endl;
-            cout << "1. Si" << endl;
-            cout << "2. No" << endl;
+            cout << "\n1. Si || 2. No" << endl;
             cout << "Opcion: ";
             cin >> volver;
 
@@ -484,7 +484,7 @@ int Partida(string entrenador, int opPk) {
     // Campeon
     if (Lideres == 5) {
         cout << "\n========================================" << endl;
-        cout << "¡INCREIBLE!! ¡ERES EL CAMPEON!" << endl;
+        cout<< "\033[1m" << "¡INCREIBLE!! ¡ERES EL CAMPEON!"<< "\033[0m" << endl;
         cout << "Felicidades, " << entrenador << "!" << endl;
         cout << "========================================" << endl;
 
